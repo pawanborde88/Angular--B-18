@@ -36,4 +36,97 @@ body {
   .login-button {
     /* font-size: 12px !important; */
   }
-  
+  /* Navbar CSS */
+  .side-logo img {
+    border-radius: 50%;
+}
+
+#sidebar.active {
+    left: -200px;
+}
+
+ul li a i {
+    font-size: 15px;
+}
+
+ul li a span {
+    font-size: 14px;
+}
+
+.bg-orange {
+    background-color: #FF8A65;
+}
+
+.right-side-card {
+    font-size: 50px;
+}
+
+.bg-teal-light {
+    background-color: #4DB6AC;
+}
+
+.bg-pink-light {
+    background-color: #F06292;
+}
+
+.bg-purple-light {
+    background-color: #9575cd !important;
+}
+
+.user-info img {
+    border-radius: 50%;
+    border: 5px solid rgba(256, 256, 256, 0.3);
+    width: 60px;
+    height: 60px;
+}
+
+.bg-maroon-light {
+    background-color: #C24984 !important;
+    color: #fff !important;
+
+}
+
+.user-info {
+    border-radius: 4px;
+}
+
+.user-info .user-profile {
+    border-radius: 4px 4px 0px 0px;
+}
+
+.user-info div div span {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.user-info div div p {
+    font-size: 12px;
+}
+
+.user-info .form-list {
+    border-radius: 0px 0px 4px 4px;
+}
+
+.user-info .form-list table {
+    font-size: 12px;
+    width: 100%;
+}
+
+.user-info .form-list table tr {
+    border-top: 1px solid #EEEEEE;
+    height: 45px;
+}
+
+.user-info .form-list table tr td {
+    padding: 8px;
+}
+
+.user-info .form-list table tr td i {
+    color: #C24984;
+}
+
+.no-margin {
+    margin: -20px;
+    font-size: 13px;
+
+}
