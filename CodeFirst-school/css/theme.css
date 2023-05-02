@@ -183,3 +183,45 @@ cursor: pointer;
 .footer1{
 text-align: center;
 }
+/*sidebar menu Academic Class*/
+.box-title{
+  color:#1AA;
+}
+.search1{
+  float: right;
+}
+.cls1{
+  font-family: 'OpenSans Regular';
+  font-size: 15px;
+}
+.text-red{
+  color: red;
+}
+.sorting1{
+  color: #cbcfd8;
+ margin: 0px 15px;
+
+}
+.btn-info{
+  cursor: pointer;
+  color: #fff;
+    background-color: #00acac;
+    border-color: #00acac;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    margin-left: 190px;
+}
+.callout {
+  margin: 0 0 20px 0;
+  padding: 15px 30px 15px 15px;
+  border-left: 5px solid #eee;
+  background-color: #fcf2f2;
+    border-color: #dFb5b4;}
+    /* section css*/
+    .section{
+      float:right;
+    }
+    .note{
+      background-color: #cbcfd8;
+    }
