@@ -59,12 +59,13 @@
           <div class="box mt-4 bg-white" style="height: 340px">
             <div class="box-header rounded-3">
               <h6 class="bg-dark text-white p-2">
-                <i class="fa fa-users"></i>Student Attendance
+                <i class="fa fa-users"></i>Teacher Attendance
               </h6>
               <ol class="breadcrumb">
                 <li class="dash">
                   <a href="https://demo.school.inilabs.xyz/dashboard/index"
-                    ><i class="fa fa-laptop"></i> Dashboard/</a
+                    ><i class="fa fa-thin fa-person-chalkboard"></i>
+                    Dashboard/</a
                   >
                 </li>
                 <li class="active color-green">Student Attendance</li>
@@ -80,7 +81,7 @@
                 "
               >
                 <i class="fa fa-plus"></i>
-                Add student attendance
+                Add teacher attendance
               </a>
 
               <div

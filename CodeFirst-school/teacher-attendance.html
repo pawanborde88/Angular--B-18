@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/theme.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <header>
+          <script>
+            fetch("navbar.html")
+              .then((response) => {
+                return response.text();
+              })
+              .then((data) => {
+                document.querySelector("header").innerHTML = data;
+              });
+          </script>
+        </header>
+      </div>
+      <div class="row">
+        <div class="col">
+          <aside>
+            <script>
+              fetch("sidebar.html")
+                .then((response) => {
+                  return response.text();
+                })
+                .then((data) => {
+                  document.querySelector("aside").innerHTML = data;
+                });
+            </script>
+          </aside>
+        </div>
+
+        <div class="col-10">
+          <div class="box mt-4 bg-white" style="min-height: 100%">
+            <div class="box-header rounded-3">
+              <h6 class="bg-dark text-white p-2">
+                <i class="fa fa-thin fa-person-chalkboard"></i>Teacher
+                Attendance
+              </h6>
+              <ol class="breadcrumb">
+                <li class="dash">
+                  <a href="https://demo.school.inilabs.xyz/dashboard/index"
+                    ><i class="fa fa-laptop"></i> Dashboard/</a
+                  >
+                </li>
+                <li class="active color-green">Teacher Attendance</li>
+              </ol>
+            </div>
+            <h6 class="page-header ms-3 mt-5">
+              <a
+                href="https://demo.school.inilabs.xyz/sattendance/add"
+                style="
+                  color: gray;
+                  font-size: 15px;
+                  border-bottom: 1px solid gray;
+                "
+              >
+                <i class="fa fa-plus"></i>
+                Add teacher attendance
+              </a>
+            </h6>
+            <div class="nav-tabs-custom">
+              <div class="tab-content">
+                <div id="all" class="tab-pane active">
+                  <div id="hide-table">
+                    <div
+                      id="example1_wrapper"
+                      class="dataTables_wrapper form-inline no-footer"
+                    >
+                      <div class="dt-buttons ms-4 mt-4">
+                        <button
+                          type="button"
+                          class="btn btn-light btn-outline-secondary btn-sm fs-fw"
+                        >
+                          <span>Copy</span>
+                        </button>
+                        <!--  <a
+                          class="dt-button buttons-copy buttons-html5 text-black border rounded-2"
+                          tabindex="0"
+                          aria-controls="example1"
+                          ><span>Copy</span></a
+                        > --><button
+                          type="button"
+                          class="btn btn-light btn-outline-secondary btn-sm fs-fw m-1"
+                        >
+                          <span>sheet</span></button
+                        ><button
+                          type="button"
+                          class="btn btn-light btn-outline-secondary btn-sm fs-fw m-1"
+                        >
+                          <span>CSV</span></button
+                        ><button
+                          type="button"
+                          class="btn btn-light btn-outline-secondary btn-sm fs-fw m-1"
+                        >
+                          <span>PDF</span>
+                        </button>
+                        <label class="search-1 text-muted fs-fw"
+                          >Search:<input
+                            type="search"
+                            class="input-sm"
+                            placeholder=""
+                        /></label>
+                      </div>
+                      <table
+                        id="example1"
+                        class="table table-striped table-bordered table-hover dataTable no-footer ms-4"
+                        role="grid"
+                        aria-describedby="example1_info"
+                        style="width: 95%"
+                      >
+                        <thead>
+                          <tr role="row">
+                            <th class="col-sm-2 sorting text-muted fs-fw">
+                              # <i class="fa fa-sort sort-icon"></i>
+                            </th>
+                            <th class="col-sm-2 sorting text-muted fs-fw">
+                              Photo<i class="fa fa-sort sort-icon"></i>
+                            </th>
+                            <th class="col-sm-2 sorting text-muted fs-fw">
+                              Name<i class="fa fa-sort sort-icon"></i>
+                            </th>
+                            <!-- <th class="col-sm-2 sorting text-muted fs-fw">
+                              Roll<i class="fa fa-sort sort-icon"></i>
+                            </th> -->
+                            <th class="col-sm-2 sorting text-muted fs-fw">
+                              Email<i class="fa fa-sort sort-icon"></i>
+                            </th>
+                            <th class="col-sm-2 sorting text-muted fs-fw">
+                              Action<i class="fa fa-sort sort-icon"></i>
+                            </th>
+                            <!-- <th
+                              class="col-sm-2 sorting"
+                              tabindex="0"
+                              aria-controls="example1"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Action: activate to sort column ascending"
+                            >
+                              Action
+                            </th> -->
+                          </tr>
+                        </thead>
+                        <tbody class="fs-fw">
+                          <tr role="row" class="odd">
+                            <td data-title="#" class="sorting_1">1</td>
+
+                            <td data-title="Photo">
+                              <img
+                                src="https://demo.school.inilabs.xyz/uploads/images/default.png"
+                                width="35px"
+                                height="35px"
+                                class="img-rounded"
+                                alt=""
+                              />
+                            </td>
+                            <td data-title="Name">Ali Shohag</td>
+                            <td data-title="Email">teacher000@gmail.com</td>
+                            <td data-title="Action">
+                              <a
+                                href="https://demo.school.inilabs.xyz/tattendance/view/11"
+                                class="btn btn-success btn-xs mrg"
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                data-original-title="View"
+                                ><i
+                                  class="fa fa-thin fa-square-check fw-lighter"
+                                ></i
+                              ></a>
+                            </td>
+                          </tr>
+                          <tr role="row" class="even">
+                            <td data-title="#" class="sorting_1">2</td>
+
+                            <td data-title="Photo">
+                              <img
+                                src="https://demo.school.inilabs.xyz/uploads/images/a2239367d02ca4d83ed7478d7fa125b6ffabca978e572f57b389e54b3374faa8ace4e48fbf2215a83e2a3a5ffce78276c15708a2188cc9d0b8e25c896302258c.jpg"
+                                width="35px"
+                                height="35px"
+                                class="img-rounded"
+                                alt=""
+                              />
+                            </td>
+                            <td data-title="Name">Alisha Henry</td>
+                            <td data-title="Email">AlishaHenry@dayrep.com</td>
+                            <td data-title="Action">
+                              <a
+                                href="https://demo.school.inilabs.xyz/tattendance/view/1"
+                                class="btn btn-success btn-xs mrg"
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                data-original-title="View"
+                                ><i
+                                  class="fa fa-thin fa-square-check fw-lighter"
+                                ></i
+                              ></a>
+                            </td>
+                          </tr>
+                          <tr role="row" class="odd">
+                            <td data-title="#" class="sorting_1">3</td>
+
+                            <td data-title="Photo">
+                              <img
+                                src="https://demo.school.inilabs.xyz/uploads/images/87ac7a2910ad34a79bc0420d507fc122b9ea3c3eaa19ffc2ba4e4cae613867e4a8766bfc0e2eff82e7bd3284791a30f12050de572c6e06d94c9c56876a10d2c2.jpg"
+                                width="35px"
+                                height="35px"
+                                class="img-rounded"
+                                alt=""
+                              />
+                            </td>
+                            <td data-title="Name">Archie Webb</td>
+                            <td data-title="Email">ArchieWebb@dayrep.com</td>
+                            <td data-title="Action">
+                              <a
+                                href="https://demo.school.inilabs.xyz/tattendance/view/9"
+                                class="btn btn-success btn-xs mrg"
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                data-original-title="View"
+                                ><i
+                                  class="fa fa-thin fa-square-check fw-lighter"
+                                ></i
+                              ></a>
+                            </td>
+                          </tr>
+                          <tr role="row" class="even">
+                            <td data-title="#" class="sorting_1">4</td>
+
+                            <td data-title="Photo">
+                              <img
+                                src="https://demo.school.inilabs.xyz/uploads/images/default.png"
+                                width="35px"
+                                height="35px"
+                                class="img-rounded"
+                                alt=""
+                              />
+                            </td>
+                            <td data-title="Name">Georgina Hayward</td>
+                            <td data-title="Email">
+                              GeorginaHayward@rhyta.com
+                            </td>
+                            <td data-title="Action">
+                              <a
+                                href="https://demo.school.inilabs.xyz/tattendance/view/6"
+                                class="btn btn-success btn-xs mrg"
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                data-original-title="View"
+                                ><i
+                                  class="fa fa-thin fa-square-check fw-lighter"
+                                ></i
+                              ></a>
+                            </td>
+                          </tr>
+                          <tr role="row" class="odd">
+                            <td data-title="#" class="sorting_1">5</td>
+
+                            <td data-title="Photo">
+                              <img
+                                src="https://demo.school.inilabs.xyz/uploads/images/default.png"
+                                width="35px"
+                                height="35px"
+                                class="img-rounded"
+                                alt=""
+                              />
+                            </td>
+                            <td data-title="Name">Jordan Mitchell</td>
+                            <td data-title="Email">
+                              JordanMitchell@teleworm.us
+                            </td>
+                            <td data-title="Action">
+                              <a
+                                href="https://demo.school.inilabs.xyz/tattendance/view/4"
+                                class="btn btn-success btn-xs mrg"
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                data-original-title="View"
+                                ><i
+                                  class="fa fa-thin fa-square-check fw-lighter"
+                                ></i
+                              ></a>
+                            </td>
+                          </tr>
+                          <tr role="row" class="even">
+                            <td data-title="#" class="sorting_1">6</td>
+
+                            <td data-title="Photo">
+                              <img
+                                src="https://demo.school.inilabs.xyz/uploads/images/default.png"
+                                width="35px"
+                                height="35px"
+                                class="img-rounded"
+                                alt=""
+                              />
+                            </td>
+                            <td data-title="Name">Katie Walsh</td>
+                            <td data-title="Email">KatieWalsh@teleworm.us</td>
+                            <td data-title="Action">
+                              <a
+                                href="https://demo.school.inilabs.xyz/tattendance/view/10"
+                                class="btn btn-success btn-xs mrg"
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                data-original-title="View"
+                                ><i
+                                  class="fa fa-thin fa-square-check fw-lighter"
+                                ></i
+                              ></a>
+                            </td>
+                          </tr>
+                          <tr role="row" class="odd">
+                            <td data-title="#" class="sorting_1">7</td>
+
+                            <td data-title="Photo">
+                              <img
+                                src="https://demo.school.inilabs.xyz/uploads/images/9b42dbc4759f2fcc7f7baf46f4e5e7a8eba607102c8cac31fbb3508e413c1452ecfb5a040a77a185156cd2221a7525bcec2de015be33d23d4836e02d3d2d715f.jpg"
+                                width="35px"
+                                height="35px"
+                                class="img-rounded"
+                                alt=""
+                              />
+                            </td>
+                            <td data-title="Name">Maisie Pollard</td>
+                            <td data-title="Email">MaisiePollard@rhyta.com</td>
+                            <td data-title="Action">
+                              <a
+                                href="https://demo.school.inilabs.xyz/tattendance/view/2"
+                                class="btn btn-success btn-xs mrg"
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                data-original-title="View"
+                                ><i
+                                  class="fa fa-thin fa-square-check fw-lighter"
+                                ></i
+                              ></a>
+                            </td>
+                          </tr>
+                          <tr role="row" class="even">
+                            <td data-title="#" class="sorting_1">8</td>
+
+                            <td data-title="Photo">
+                              <img
+                                src="https://demo.school.inilabs.xyz/uploads/images/default.png"
+                                width="35px"
+                                height="35px"
+                                class="img-rounded"
+                                alt=""
+                              />
+                            </td>
+                            <td data-title="Name">Mia O'Donnell</td>
+                            <td data-title="Email">
+                              MiaODonnell@jourrapide.com
+                            </td>
+                            <td data-title="Action">
+                              <a
+                                href="https://demo.school.inilabs.xyz/tattendance/view/3"
+                                class="btn btn-success btn-xs mrg"
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                data-original-title="View"
+                                ><i
+                                  class="fa fa-thin fa-square-check fw-lighter"
+                                ></i
+                              ></a>
+                            </td>
+                          </tr>
+                          <tr role="row" class="odd">
+                            <td data-title="#" class="sorting_1">9</td>
+
+                            <td data-title="Photo">
+                              <img
+                                src="https://demo.school.inilabs.xyz/uploads/images/default.png"
+                                width="35px"
+                                height="35px"
+                                class="img-rounded"
+                                alt=""
+                              />
+                            </td>
+                            <td data-title="Name">Naomi Doyle</td>
+                            <td data-title="Email">
+                              NaomiDoyle@jourrapide.com
+                            </td>
+                            <td data-title="Action">
+                              <a
+                                href="https://demo.school.inilabs.xyz/tattendance/view/8"
+                                class="btn btn-success btn-xs mrg"
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                data-original-title="View"
+                                ><i
+                                  class="fa fa-thin fa-square-check fw-lighter"
+                                ></i
+                              ></a>
+                            </td>
+                          </tr>
+                          <tr role="row" class="even">
+                            <td data-title="#" class="sorting_1">10</td>
+
+                            <td data-title="Photo">
+                              <img
+                                src="https://demo.school.inilabs.xyz/uploads/images/default.png"
+                                width="35px"
+                                height="35px"
+                                class="img-rounded"
+                                alt=""
+                              />
+                            </td>
+                            <td data-title="Name">Riley Reynolds</td>
+                            <td data-title="Email">
+                              RileyReynolds@teleworm.us
+                            </td>
+                            <td data-title="Action">
+                              <a
+                                href="https://demo.school.inilabs.xyz/tattendance/view/7"
+                                class="btn btn-success btn-xs mrg"
+                                data-placement="top"
+                                data-toggle="tooltip"
+                                data-original-title="View"
+                                ><i
+                                  class="fa fa-thin fa-square-check fw-lighter"
+                                ></i
+                              ></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div
+                        class="dataTables_info ms-4 text-muted fs-fw"
+                        id="example1_info"
+                        role="status"
+                        aria-live="polite"
+                      >
+                        Showing 0 to 0 of 0 entries
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="dataTables_paginate paging_simple_numbers"
+                id="example1_paginate"
+              >
+                <ul class="pagination">
+                  <li
+                    class="paginate_button previous disabled"
+                    aria-controls="example1"
+                    tabindex="0"
+                    id="example1_previous"
+                  >
+                    <a href="#">Previous</a>
+                  </li>
+                  <li
+                    class="paginate_button next disabled"
+                    aria-controls="example1"
+                    tabindex="0"
+                    id="example1_next"
+                  >
+                    <a href="#">Next</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+        .fs-fw {
+          font-size: 13px;
+          font-weight: 100;
+        }
+        .breadcrumb {
+          display: flex;
+          justify-content: end;
+          margin-top: -40px;
+          color: white;
+          text-decoration: none;
+          font-size: 12px;
+          padding-top: 5px;
+        }
+        a {
+          background: transparent;
+          text-decoration: none !important;
+          color: #cccccc;
+        }
+        /*  .nav-tabs-custom {
+          margin: 7px 20px;
+          background: #fff;
+          box-shadow: 0px 1px 3px rgba(167, 16, 16, 0.1);
+        } */
+        /* .active1 {
+          color: #1aa;
+        } */
+        .form-select {
+          margin-left: 960px;
+          margin-top: -25px;
+        }
+        .txt-1 {
+          background-color: #e5e5e5;
+          font-size: 13px;
+          padding: 9px;
+          font-weight: 100;
+        }
+        .search-1 {
+          margin-left: 670px;
+        }
+        .sort-icon {
+          margin-left: 110px;
+          font-size: 13px;
+        }
+
+        div.dataTables_paginate {
+          float: right;
+          margin: 0;
+          border: 1px solid gray;
+        }
+        /* .sort-txt {
+          font-size: 13px;
+          text-decoration: none;
+          font-weight: 100;
+        } */
+      </style>
+      <div class="row">
+        <div class="col-12">
+          <footer
+            class="d-flex justify-content-between align-items-center p-2 bg-white text-black-50 no-margin mt-3 border-top"
+          >
+            <strong>Copyright © School Management System</strong>
+            <span><b>v </b>5.5</span>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
