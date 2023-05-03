@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+
+    /* .side-bar {
+  margin-left: 0px;    } */
+   aside.hidden {
+    display: none;
+    margin-left: -220;
+  }
+  .dash-bar.expanded {
+    background-color: #D9E0E7;
+    width: 100%;
+}
+  /* .footer.shrink {
+    left: 0px;
+  } */
+  </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <header>
+                    <script>
+          fetch("navbar.html")
+            .then(response => {
+              return response.text()
+            })
+            .then(data => {
+              document.querySelector("header").innerHTML = data;
+              
+              const sidebar = document.querySelector('aside');
+              const dashboard = document.querySelector('.dash-bar');
+              // const footerbar = document.querySelector('.footer');
+              const sidebarToggle = document.querySelector('#sidebar-toggle');
+
+            sidebarToggle.addEventListener('click', function() {
+              sidebar.classList.toggle('hidden');
+              dashboard.classList.toggle('expanded');
+              // footerbar.classList.toggle('shrink');
+              console.log('toggle clicked')
+            });
+            });
+        </script>
+                </header>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <aside>
+                        <script>
+            fetch("sidebar.html")
+              .then(response => {
+                return response.text()
+              })
+              .then(data => {
+                document.querySelector("aside").innerHTML = data;
+              });
+          </script>
+                    </aside>
+                </div>
+
+                <div class="col-10">
+                    <div class="card main">
+                        <div class="row">
+                            <div class="col-4">
+                                <h4 class="compose text-center mt-3">compose</h4>
+                                <div class="card">
+                                    <h4 class="card1 text-white bg-black">Folders</h4>
+                                    <div class="symbol ms-2">
+                                       <i class="bi bi-inbox-fill onmouseover=myFunction()"; id="ok"
+                                       >conversion </i><br>
+                                        <i class="bi bi-file-earmark-bar-graph">Drafts</i><br>
+                                        <i class="bi bi-trash">trash</i><br>
+                                        <i class="bi bi-envelope">sent</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="card">
+                                    <div class="conversion-symbol">
+                                        <h4 class="Drafts text-white 
+                                        
+                                            mt-3 ">Conversion</h4>
+                                        <i class="logo1 bi bi-app"></i>
+                                        <i class="logo2 bi bi-trash"></i>
+                                        <i class="logo3 bi bi-arrow-clockwise"></i>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3 mt-2 ">
+                                            <select name="" id="">
+                                                <option value="">10</option>
+                                                <option value="">25</option>
+                                                <option value="">50</option>
+                                                <option value="">100</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-3">
+                                            <h6>record per pages</h6>
+                                        </div>
+                                        <div class="col-6 me-0">
+                                            Search:<input type="search" name=""
+                                                id="">
+                                        </div>
+                                        <div class="row ms-2">
+                                            <table>
+                                                
+                                                <thead>
+                                                    <th>#</th>
+                                                    <th><i class="fa fa-caret-down"></i>status</th>
+                                                    <th><i class="fa fa-caret-down"></i>Name</th>
+                                                    <th><i class="fa fa-caret-down"></i>subject</th>
+                                                    <th><i class="fa fa-caret-down"></i>Attach</th>
+                                                    <th><i class="fa fa-caret-down"></i>Time</th>
+                                                    <th><i class="fa fa-caret-down"></i>Reply</th>
+
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input
+                                                                type="checkbox"
+                                                                name="" id=""></td>
+                                                        <td><i class="bi
+                                                                bi-star"></i></td>
+                                                        <td>John Doe</td>
+                                                        <td>parent</td>
+                                                        <td>.......</td>
+                                                        <td>2 Dec 2021
+                                                            07:57:52pm </td>
+                                                        <td><span class="reply">0</span></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><input
+                                                                type="checkbox"
+                                                                name="" id=""></td>
+                                                        <td><i class="bi
+                                                                bi-star"></i></td>
+                                                        <td>John Doe</td>
+                                                        <td>making que</td>
+                                                        <td>......</td>
+                                                        <td>2 Dec 2021
+                                                            07:51:08pm</td>
+                                                        <td><span class="reply">0</span></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><input
+                                                                type="checkbox"
+                                                                name="" id=""></td>
+                                                        <td><i class="bi
+                                                                bi-star"></i></td>
+                                                        <td>John Doe</td>
+                                                        <td>Exam fee</td>
+                                                        <td>.......</td>
+                                                        <td>2 Dec 2021
+                                                            07:51:08pm</td>
+                                                        <td><span class="reply">0</span></td>
+                                                    </tr>
+                                                </tbody>
+                                                </div>
+                                            </table>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+
+                                          <h6 class="bottom ms-2">Showing 1 to 3 of 3 entries</h6>
+
+                                            </div>
+                                            <div class="col-6 me-0">
+                                         <button disabled="disabled">previous</button>
+                                         <button disabled="disabled1">1</button>
+                                         <button disabled="disabled">next</button>
+
+
+
+
+                                    </div>
+
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6"></div>
+                        </div>
+                        <script>
+            fetch("dashboard.html")
+              .then(response => {
+                return response.text()
+              })
+              .then(data => {
+                document.querySelector(".dashboard").innerHTML = data;
+              });
+          </script>
+                    </div>
+                    <div class="row footer">
+                        <div class="">
+                            <script>
+                fetch("footer.html")
+                  .then(response => {
+                    return response.text()
+                  })
+                  .then(data => {
+                    document.querySelector(".footer").innerHTML = data;
+                  });
+
+
+
+                  function myFunction() {
+  document.getElementById("ok").click();
+}
+
+              </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

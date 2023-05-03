@@ -205,3 +205,51 @@ footer {
     background-color: #fff;
     text-align: center;
   }
+
+
+  /* component message css started */
+.compose{
+    background-color: #49b6d6;
+    color: #E2E7EB;
+}
+/* .card{
+    background-color: #fff;
+    width: 100%;  
+} */
+.reply{
+    background-color:  #49b6d6;
+    color:white;
+}
+.logo1{
+background-color: #49b6d6;
+padding:5px;
+height:5px;
+width:5px;
+object-fit: fill;
+}
+.logo2{
+    background-color: #ff5b57;
+    padding:5px;
+height:5px;
+width:5px;
+}
+.logo3{
+    background-color: #348fe2;
+    padding:5px;
+height:5px;
+width:5px;
+}
+.conversion-symbol{
+    display: inline-block;
+}
+button disable1{
+   color:white;
+    background-color: black;
+}
+
+.card main{
+    height:500px;
+}
+.Drafts{
+    background-color: black;
+}

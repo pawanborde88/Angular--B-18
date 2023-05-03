@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+
+    /* .side-bar {
+  margin-left: 0px;    } */
+   aside.hidden {
+    display: none;
+    margin-left: -220;
+  }
+  .dash-bar.expanded {
+    background-color: #D9E0E7;
+    width: 100%;
+}
+  /* .footer.shrink {
+    left: 0px;
+  } */
+  </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <header>
+                    <script>
+          fetch("navbar.html")
+            .then(response => {
+              return response.text()
+            })
+            .then(data => {
+              document.querySelector("header").innerHTML = data;
+              
+              const sidebar = document.querySelector('aside');
+              const dashboard = document.querySelector('.dash-bar');
+              // const footerbar = document.querySelector('.footer');
+              const sidebarToggle = document.querySelector('#sidebar-toggle');
+
+            sidebarToggle.addEventListener('click', function() {
+              sidebar.classList.toggle('hidden');
+              dashboard.classList.toggle('expanded');
+              // footerbar.classList.toggle('shrink');
+              console.log('toggle clicked')
+            });
+            });
+        </script>
+                </header>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <aside>
+                        <script>
+            fetch("sidebar.html")
+              .then(response => {
+                return response.text()
+              })
+              .then(data => {
+                document.querySelector("aside").innerHTML = data;
+              });
+          </script>
+                    </aside>
+                </div>
+
+                <div class="col-10">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-4">
+                                <h4 class="compose text-center mt-3">compose</h4>
+                                <div class="card">
+                                    <h4 class="card1 text-white bg-black">Folders</h4>
+                                    <div class="symbol ms-2">
+                                        <a href="./conversion.html"><i class="bi bi-inbox-fill">conversion</i></a><br>
+                                        <a href="./Drafts.html"><i class="bi bi-file-earmark-bar-graph">Drafts</i></a><br>
+                                        <a href="./Trash.html"><i class="bi bi-trash">trash</i></a><br>
+                                        <a href="./sent.html"><i class="bi bi-envelope">sent</i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <div class="conversion-symbol">
+                                        <h4 class="Drafts text-white bg-dark
+                                            mt-3">Conversion</h4>
+                                        <i class="logo1 bi bi-app"></i>
+                                        <i class="logo2 bi bi-trash"></i>
+                                        <i class="logo3 bi bi-arrow-clockwise"></i>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-2 mt-2">
+                                            <select name="" id="">
+                                                <option value="">10</option>
+                                                <option value="">25</option>
+                                                <option value="">50</option>
+                                                <option value="">100</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-4">
+                                            <h6>record per pages</h6>
+                                        </div>
+                                        <div class="col-6">
+                                            Search:<input type="search" name=""
+                                                id="">
+                                        </div>
+                                        <div class="row">
+                                            <table>
+                                                <div class="card">
+                                                <thead>
+                                                    <th>#</th>
+                                                    <th>status</th>
+                                                    <th>Name</th>
+                                                    <th>subject</th>
+                                                    <th>Attach</th>
+                                                    <th>Time</th>
+                                                    <th>Reply</th>
+
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input
+                                                                type="checkbox"
+                                                                name="" id=""></td>
+                                                        <td><i class="bi
+                                                                bi-star"></i></td>
+                                                        <td>John Doe</td>
+                                                        <td>parent</td>
+                                                        <td>.......</td>
+                                                        <td>2 Dec 2021
+                                                            07:57:52pm </td>
+                                                        <td><span class="reply">0</span></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><input
+                                                                type="checkbox"
+                                                                name="" id=""></td>
+                                                        <td><i class="bi
+                                                                bi-star"></i></td>
+                                                        <td>John Doe</td>
+                                                        <td>making que</td>
+                                                        <td>......</td>
+                                                        <td>2 Dec 2021
+                                                            07:51:08pm</td>
+                                                        <td><span class="reply">0</span></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><input
+                                                                type="checkbox"
+                                                                name="" id=""></td>
+                                                        <td><i class="bi
+                                                                bi-star"></i></td>
+                                                        <td>John Doe</td>
+                                                        <td>Exam fee</td>
+                                                        <td>.......</td>
+                                                        <td>2 Dec 2021
+                                                            07:51:08pm</td>
+                                                        <td><span class="reply">0</span></td>
+                                                    </tr>
+                                                </tbody>
+                                                </div>
+                                            </table>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+
+
+
+                                            </div>
+                                            <div class="col-6">
+                                                <button disabled="disabled">previous</button>
+                                                <button disabled="disabled">next</button>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6"></div>
+                        </div>
+                        <script>
+            fetch("dashboard.html")
+              .then(response => {
+                return response.text()
+              })
+              .then(data => {
+                document.querySelector(".dashboard").innerHTML = data;
+              });
+          </script>
+                    </div>
+                    <div class="row footer">
+                        <div class="">
+                            <script>
+                fetch("footer.html")
+                  .then(response => {
+                    return response.text()
+                  })
+                  .then(data => {
+                    document.querySelector(".footer").innerHTML = data;
+                  });
+              </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
