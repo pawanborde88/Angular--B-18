@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="theme.css">
+    <style>
+        /* .side-bar {
+  margin-left: 0px;    } */
+        aside.hidden {
+            display: none;
+            margin-left: -220;
+        }
+
+        .dash-bar.expanded {
+            background-color: #D9E0E7;
+            width: 100%;
+        }
+
+        /* .footer.shrink {
+    left: 0px;
+  } */
+    </style>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <header>
+                <script>
+                    fetch("navbar.html")
+                        .then(response => {
+                            return response.text()
+                        })
+                        .then(data => {
+                            document.querySelector("header").innerHTML = data;
+
+                            const sidebar = document.querySelector('aside');
+                            const dashboard = document.querySelector('.dash-bar');
+                            // const footerbar = document.querySelector('.footer');
+                            const sidebarToggle = document.querySelector('#sidebar-toggle');
+
+                            sidebarToggle.addEventListener('click', function () {
+                                sidebar.classList.toggle('hidden');
+                                dashboard.classList.toggle('expanded');
+                                // footerbar.classList.toggle('shrink');
+                                console.log('toggle clicked')
+                            });
+                        });
+                </script>
+            </header>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <aside>
+                    <script>
+                        fetch("sidebar.html")
+                            .then(response => {
+                                return response.text()
+                            })
+                            .then(data => {
+                                document.querySelector("aside").innerHTML = data;
+                            });
+                    </script>
+                </aside>
+            </div>
+            <div class="col-10">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title text-white">
+                            <i class="fa-sharp fa-regular fa-pen-field"></i>
+                            Leave Apply
+                        </h3>
+                        <ol class="breadcrumb text-white float-end">
+                            <li>
+                                <i class="fa-solid fa-laptop text-white"></i>
+                                Dashboard
+                            </li>
+                            <li class="active color-green">
+                                / Leave Apply
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div>
+                        <h5 class="page-header">
+                            <i class="fa-solid fa-plus"></i>
+                            Add a leave application
+                        </h5>
+                        <div id="hide-table">
+                            <div>
+                                <a class="dt-buttons"><span>Copy</span></a>
+                                <a class="dt-buttons"><span>Excel</span></a>
+                                <a class="dt-buttons"><span>CSV</span></a>
+                                <a class="dt-buttons"><span>PDF</span></a>
+                            </div>
+                            <div class="float-end">
+                                <label>
+                                    search:
+                                    <input type="search" class="control" placeholder="">
+                                </label>
+                            </div>
+                        </div>
+                        <table class="border">
+                            <thead>
+                                <tr>
+                                    <th class="common">#</th>
+                                    <th class="common">Appilaction To</th>
+                                    <th class="common">Category</th>
+                                    <th class="common">Date</th>
+                                    <th class="common">Schedule</th>
+                                    <th class="common">Days</th>
+                                    <th class="common">Attachment</th>
+                                    <th class="common">Status</th>
+                                    <th class="common">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <td>No data available in table </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="info">Showing 0 to 0 of 0 entries</div>
+                        <div class="pagination float-end">
+                            <ul class="paginate list-unstyled">
+                                <li><a href="#" class="paginate border text-secondary" >Previous</a></li>
+                                <li><a href="#" class="paginate border text-secondary">Nexts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row footer">
+                    <div class="">
+                        <script>
+                            fetch("footer.html")
+                                .then(response => {
+                                    return response.text()
+                                })
+                                .then(data => {
+                                    document.querySelector(".footer").innerHTML = data;
+                                });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
