@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <header>
+                <script>
+                    fetch("navbar.html")
+                        .then(response => {
+                            return response.text()
+                        })
+                        .then(data => {
+                            document.querySelector("header").innerHTML = data;
+                        });
+                </script>
+            </header>
+        </div>
+        <div class="row">
+            <div class="col">
+                <aside>
+                    <script>
+                        fetch("sidebar.html")
+                            .then(response => {
+                                return response.text()
+                            })
+                            .then(data => {
+                                document.querySelector("aside").innerHTML = data;
+                            });
+                    </script>
+                </aside>
+            </div>
+            <div class="col-10 content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="box">
+                            <div class="box-header d-flex justify-content-between">
+                                <h3 class="box-title">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    Issue
+                                </h3>
+                                <ol class="d-flex list-unstyled box-dash">
+                                    <li>
+                                        <a href="#" class="text-decoration-none text-white link-dark me-1">
+                                            <i class="fa fa-laptop"></i>
+                                            Dashboard
+                                        </a>
+                                    </li>
+                                    <li class="active ms-1">
+                                        / Issue
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="box-body bg-white">
+                            <div class="row form-1">
+                                <h6 class="page-header">
+                                    <a class="add-book link-secondary" href="addclass.html">
+                                        <i class="fa fa-plus"></i>
+                                        Issue a book
+                                    </a>
+                                </h6>
+                                <div class="col-6 offset-md-3 list-group">
+                                    <div class="list-group-item">
+                                        <form class="form-horizontal " role="form" method="post"
+                                        enctype="multipart/form-data">
+                                        <div class="form-group d-flex justify-content-between">
+                                            <label for="lid" class="col-sm-3 control-label">
+                                                Library ID <span class="text-red">*</span>
+                                            </label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="lid" name="lid" value="">
+                                            </div>
+                                            <div class="col-sm-3 ms-3">
+                                                <input type="submit" class="btn btn-success iss-mar" value="Search">
+                                            </div>
+
+                                        </div>
+                                    </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="Main-footer d-flex justify-content-between">
+            <div class="footer-text">
+                <strong class="fw-bold fs-9">Copyright © School Management System</strong>
+            </div>
+            <div class="hidden-xs ">
+                <span class="ms-0"><b>v</b>5.5</span>
+            </div>
+        </section>
+        </div>
+</body>
+
+</html>

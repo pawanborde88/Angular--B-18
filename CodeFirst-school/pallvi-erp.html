@@ -1,0 +1,220 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@gajul12 
+CodeFisrt
+/
+Angular-B-18
+Public
+Fork your own copy of CodeFisrt/Angular-B-18
+Code
+Issues
+Pull requests
+2
+Actions
+Projects
+Wiki
+Security
+Insights
+Beta Try the new code view
+Angular-B-18/CodeFirst-school/class.html
+@pallavipawar30
+pallavipawar30 class Menus sidebar
+Latest commit ec5756a in 10 hours
+ History
+ 1 contributor
+172 lines (157 sloc)  7.55 KB
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+   
+
+   <div class="container-fluid">
+    <div class="row">
+        <header>
+            <script>
+                fetch("navbar.html")
+              .then(response => {
+                return response.text()
+              })
+              .then(data => {
+                document.querySelector("header").innerHTML = data;
+              });
+              </script>
+        </header>
+    </div>
+    <div class="row">
+        <div class="col">
+            <aside>
+                <script>
+                    fetch("sidebar.html")
+                  .then(response => {
+                    return response.text()
+                  })
+                  .then(data => {
+                    document.querySelector("aside").innerHTML = data;
+                  });
+                  </script>
+            </aside>
+        </div>
+        <div class="col-10 cls1">
+            <nav class="navbar bg-dark text-white justify-content-between">
+                <div>
+                    <h6 class="px-2"><i class="fa fa-sitemap"></i> Class</h6>
+                
+                </div>
+                
+                    <ol class="breadcrumb text-white">
+                      <li><a class="breadcrumb-item active text-white" href=""><i class="fa fa-laptop"></i>Dashboard</a></li>
+                        <li>/</li>
+                        <li class="box-title me-4" aria-current="page">Class</li>
+                    </ol> 
+                
+                </nav>
+                <h6 class="page-header text-muted py-3 ms-2"> <a  class="nav-link " href="addclass.html"> <i class="fa fa-plus"></i>  Add a class </a></h6>
+
+
+    <button type="button" class="btn btn-outline-secondary btn-sm"><span>Copy</span></button>
+    <button type="button" class="btn btn-outline-secondary btn-sm"><span>Excel</span></button>
+    <button type="button" class="btn btn-outline-secondary btn-sm"><span>CSV</span></button>
+    <button type="button" class="btn btn-outline-secondary btn-sm"><span>PDF</span></button>
+    
+    <div class="search1">
+        
+            <label>Search:<input type="search" class=" input-sm px-2" placeholder=""></label>
+        </div>  
+   
+
+      <table class="table table-striped table-bordered table-hover dataTable no-footer my-3">
+<thead>
+    <tr role="row">
+      <th class="text-muted"># <a href="" class="sorting1"><i class="fa fa-sort   ms-5"></i> </a></th>
+      <th class="text-muted">Class <a href=""> <i class="fa fa-sort  sorting1"></i></a></th>
+      <th class="text-muted">Class Numeric  <a href=""><i class="fa fa-sort  sorting1"></i> </a></th>
+      <th class="text-muted">Teacher Name  <a href=""><i class="fa fa-sort  sorting1"></i> </a></th>
+      <th class="text-muted">Note <a href=""><i class="fa fa-sort  sorting1"></i> </a></th>
+      <th class="text-muted">Action <a href=""><i class="fa fa-sort sorting1" ></i></a></th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+    <td data-title="#">1 </td>
+       <td data-title="Class"> One  </td>
+       <td data-title="Class Numeric">1 </td>
+       <td data-title="Teacher Name"> Alisha Henry     </td>
+       <td data-title="Note"> Class one    </td>
+       <td data-title="Action">
+       <a href="" class="btn btn-warning btn-xs  text-white mrg"><i class="fa fa-edit"></i> </a>                                       
+        <a href=""  class="btn btn-danger btn-xs mrg"><i class="fa-solid fa-trash-can"></i></a> </td>
+       </tr>
+                
+        <tr>
+            <td data-title="#">2 </td>
+            <td data-title="Class"> Two  </td>
+            <td data-title="Class Numeric">2 </td>
+            <td data-title="Teacher Name">Jordan Mitchell </td>
+            <td data-title="Note">  Class two  </td>
+            <td data-title="Action">
+            <a href="" class="btn btn-warning btn-xs  text-white mrg"><i class="fa fa-edit"></i> </a>                                       
+             <a href=""  class="btn btn-danger btn-xs mrg"><i class="fa-solid fa-trash-can"></i></a> </td>
+         </tr>
+         <tr>
+         <td data-title="#">3 </td>
+            <td data-title="Class"> Three  </td>
+            <td data-title="Class Numeric">3 </td>
+            <td data-title="Teacher Name"> Jordan Mitchell   </td>
+            <td data-title="Note">  Class three    </td>
+            <td data-title="Action">
+            <a href="" class="btn btn-warning btn-xs  text-white mrg"><i class="fa fa-edit"></i> </a>                                       
+             <a href=""  class="btn btn-danger btn-xs mrg"><i class="fa-solid fa-trash-can"></i></a> </td>
+            </tr>
+            <tr>
+                <td data-title="#"> 4   </td>
+                   <td data-title="Class"> Four    </td>
+                   <td data-title="Class Numeric">4 </td>
+                   <td data-title="Teacher Name"> Maisie Pollard      </td>
+                   <td data-title="Note">  Class four   </td>
+                   <td data-title="Action">
+                   <a href="" class="btn btn-warning btn-xs  text-white mrg"><i class="fa fa-edit"></i> </a>                                       
+                    <a href=""  class="btn btn-danger btn-xs mrg"><i class="fa-solid fa-trash-can"></i></a> </td>
+                   </tr>
+                   <tr>
+                    <td data-title="#"> 5  </td>
+                       <td data-title="Class">Five    </td>
+                       <td data-title="Class Numeric"> 5 </td>
+                       <td data-title="Teacher Name"> Mia O'Donnell        </td>
+                       <td data-title="Note">   Class five      </td>
+                       <td data-title="Action">
+                       <a href="" class="btn btn-warning btn-xs  text-white mrg"><i class="fa fa-edit"></i> </a>                                       
+                        <a href=""  class="btn btn-danger btn-xs mrg"><i class="fa-solid fa-trash-can"></i></a> </td>
+                       </tr>
+                       <tr>
+                        <td data-title="#">  6   </td>
+                           <td data-title="Class"> Graduate     </td>
+                           <td data-title="Class Numeric"> 6 </td>
+                           <td data-title="Teacher Name"> Naomi Doyle  </td>
+                           <td data-title="Note">    Class graduate     </td>
+                           <td data-title="Action">
+                           <a href="" class="btn btn-warning btn-xs  text-white mrg"><i class="fa fa-edit"></i> </a>                                       
+                            <a href=""  class="btn btn-danger btn-xs mrg"><i class="fa-solid fa-trash-can"></i></a> </td>
+                           </tr>
+       </tbody>
+</table>
+<nav class="navbar ">
+    <span> Showing 1 to 6 of 6 entries</span> 
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" >Previous</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link bg-dark text-white" href="#" >1 <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a class="page-link" href="#" >Next</a>
+      </li>
+    </ul>
+  </nav>
+
+</div>
+  
+    <div class="row">
+        <div class="col-12">
+            <footer
+        class="d-flex justify-content-between align-items-center p-2 bg-white text-black-50 no-margin mt-3 border-top ">
+        <strong>Copyright © School Management System</strong>
+        <span><b>v </b>5.5</span>
+    </footer>
+        </div>
+    </div>
+   </div>
+</body>
+</html>
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Angular-B-18/class.html at pallavi-Erp · CodeFisrt/Angular-B-18
