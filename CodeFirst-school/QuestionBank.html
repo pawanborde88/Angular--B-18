@@ -1,280 +1,273 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeFirst School Management</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/theme.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
 
-    <!-- <style>
-        .box-header{
-            border-radius: 5px;
-            height: 40px;
-        }
-        .box-title{
-            font-size: 15px;
-        }
-        .Dashboard-text a{
-            font-size: 12px;
-            color: white;
-        }
-        .Question-text {
-            padding-top: 5px;
-            font-size: 12px;
-            color: rgb(61, 184, 139);
-        }
-        .box-body-title h5 a{
-           font-size: 18px;
-        }
-        .box-buttons a{
-            font-size: 10px;
-            border-radius: 2px;
-        }
-        .quetion-table ,th ,td{
-            font-size: 14px;
-            height: 20px;
-        }
-        .edit {
-            padding: 1px  5px;
-            margin: 0px 2px;
-            border-radius: 2px;
-            color: white;
-        }
-        .delete{
-            padding: 2px  10px;
-            margin: 0px 2px;
-            border-radius: 2px;
-            color: white;
-        }
-        .view{
-            padding: 2px  10px;
-            margin: 0px 2px;
-            border-radius: 2px;
-            color: white;
-        }
-        .search label,span{
-            font-size: 13px;
-        }
-        .search input{
-            width: 120px;
-            padding: 6px 10px;
-            height: 30px;
-        }
-        .link-text{
-            font-size: 13px;
-        }
-    </style> -->
+    /* .side-bar {
+  margin-left: 0px;    } */
+   aside.hidden {
+    display: none;
+    margin-left: -220;
+  }
+  .dash-bar.expanded {
+    background-color: #D9E0E7;
+    width: 100%;
+}
+  /* .footer.shrink {
+    left: 0px;
+  } */
+  </style>
+  
 </head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <header>
+        <script>
+          fetch("navbar.html")
+            .then(response => {
+              return response.text()
+            })
+            .then(data => {
+              document.querySelector("header").innerHTML = data;
+              
+              const sidebar = document.querySelector('aside');
+              const dashboard = document.querySelector('.dash-bar');
+              // const footerbar = document.querySelector('.footer');
+              const sidebarToggle = document.querySelector('#sidebar-toggle');
 
-<body>           
-    <section>
-        <div class="container-fluid offset-md-2">
-            <div class="row">
-                <div class="col-md-10 ">
-                   <div class="box-header d-flex justify-content-between bg-dark text-white align-items-center">
-                    <span class="box-title ps-3">
-                        <i class="fa fa-qrcode"></i>
-                        Question Bank
-                    </span>                
-                        <ol class="breadcrumb pt-2 pe-3">
-                          <li class="breadcrumb-item Dashboard-text"><a href="https://demo.school.inilabs.xyz/dashboard/index"><i class="fa fa-laptop"></i>Dashboard </a></li>
-                          <li class="px-2">/</li>
-                          <li class="breadcrumb-item Question-text " aria-current="page" >Question Bank</li>
-                        </ol>
-                    </div> 
-                    <div class="box-body py-2">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="box-body-title text-white mt-2 mb-3 pb-3">
-                                    <h5 >
-                                        <a href="#" class="text-muted"><li class="fa fa-plus"></li> Add a Question Group</a>
-                                    </h5>
-                                </div>   
-                                <div class="box-search d-flex justify-content-between">
-                                    <div class="box-buttons">
-                                        <a href="" class="btn btn-outline-secondary">Copy</a>
-                                        <a href="" class="btn btn-outline-secondary">Exel</a>
-                                        <a href="" class="btn btn-outline-secondary">CSV</a>
-                                        <a href="" class="btn btn-outline-secondary">PDF</a>
-                                    </div>
-                                    <div class="search">
-                                         <label for="search-icon" class="text-dark-50">Search : </label><input type="text" value="" id="search-icon" ></i> 
-                                    </div>                               
-                                   </div>
-                                <table id="quetion-table" class="table table-hover table-striped table-xl table-bordered table-hover  text-muted mt-2">
-                                    <thead>
-                                        <tr>
-                                            <th class="col-md-2"><div class="d-flex flex-row justify-content-between"><span>Sr.No</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
-                                            <th class="col-md-1"><div class="d-flex flex-row justify-content-between"><span>Difficulty Level</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
-                                            <th class="col-md-3"><div class="d-flex flex-row justify-content-between"><span>Question</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
-                                            <th class="col-md-1"><div class="d-flex flex-row justify-content-between align-items-center"><span>Question Group</span><div class="div flex-column d-flex m-0"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
-                                            <th class="col-md-1"><div class="d-flex flex-row justify-content-between"><span>Question Type</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
-                                            <th class="col-md-1"><div class="d-flex flex-row justify-content-between"><span>Action</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="table-active">
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Medium</td>
-                                            <td> Digital computers are classified in four categories. W..</td>
-                                            <td>Computer Knowledge</td>
-                                            <td>Single Answer</td>
-                                            <td class="edit-delete">
-                                                <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Medium</td>
-                                            <td> PC/XT stands for?</td>
-                                            <td>Computer Knowledge</td>
-                                            <td>Single Answer</td>
-                                            <td class="edit-delete">
-                                                <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Medium</td>
-                                            <td> MIPS is _?</td>
-                                            <td>Computer Knowledge</td>
-                                            <td>Single Answer</td>
-                                            <td class="edit-delete">
-                                                <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Hard</td>
-                                            <td> Typeface option will come under which menu ?...</td>
-                                            <td>Computer Knowledge</td>
-                                            <td>Single Answer</td>
-                                            <td class="edit-delete">
-                                                <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Hard</td>
-                                            <td>Ctrl + H is short cut for ?</td>
-                                            <td>Computer Knowledge</td>
-                                            <td>Single Answer</td>
-                                            <td class="edit-delete">
-                                                <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td>Medium</td>
-                                            <td> What will be the use of Ctrl + J ?</td>
-                                            <td>Computer Knowledge</td>
-                                            <td>Single Answer</td>
-                                            <td class="edit-delete">
-                                                <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td>Easy</td>
-                                            <td> Which shortcut will we use to make text Italic ?...</td>
-                                            <td>Computer Knowledge</td>
-                                            <td>Single Answer</td>
-                                            <td class="edit-delete">
-                                                <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>8</td>
-                                            <td>Easy</td>
-                                            <td> You can jump to the next column by ?</td>
-                                            <td>Computer Knowledge</td>
-                                            <td>Single Answer</td>
-                                            <td class="edit-delete">
-                                                <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>9</td>
-                                            <td>Medium</td>
-                                            <td> What is the Short cut key for line break?...</td>
-                                            <td>Computer Knowledge</td>
-                                            <td>Single Answer</td>
-                                            <td class="edit-delete">
-                                                <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>10</td>
-                                            <td>Easy</td>
-                                            <td>What does Bangladesh's flag look like?</td>
-                                            <td>Computer Knowledge</td>
-                                            <td>Single Answer</td>
-                                            <td class="edit-delete">
-                                                <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="entries text-muted">
-                                    <span>
-                                        Showing 1 to 10 of 53 entries
-                                    </span>
-                                </div>
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination justify-content-end">
-                                      <li class="page-item disabled">
-                                        <a class="page-link link-text" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                      </li>
-                                      <li class="page-item"><a class="page-link link-text bg-dark text-white" href="#">1</a></li>
-                                      <li class="page-item"><a class="page-link link-text" href="#">2</a></li>
-                                      <li class="page-item"><a class="page-link link-text" href="#">3</a></li>
-                                      <li class="page-item"><a class="page-link link-text" href="#">4</a></li>
-                                      <li class="page-item">
-                                        <a class="page-link disabled link-text" href="#">Next</a>
-                                      </li>
-                                    </ul>
-                                  </nav>
+            sidebarToggle.addEventListener('click', function() {
+              sidebar.classList.toggle('hidden');
+              dashboard.classList.toggle('expanded');
+              // footerbar.classList.toggle('shrink');
+              console.log('toggle clicked')
+            });
+            });
+        </script>
+      </header>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <aside>
+          <script>
+            fetch("sidebar.html")
+              .then(response => {
+                return response.text()
+              })
+              .then(data => {
+                document.querySelector("aside").innerHTML = data;
+              });
+          </script>
+        </aside>
+      </div>
+      <div class="col-10 ">
+        <div class="box-header d-flex justify-content-between bg-dark text-white align-items-center">
+            <span class="box-title ps-3">
+                <i class="fa fa-qrcode"></i>
+                Question Bank
+            </span>                
+                <ol class="breadcrumb pt-2 pe-3">
+                  <li class="breadcrumb-item Dashboard-text"><a href="https://demo.school.inilabs.xyz/dashboard/index"><i class="fa fa-laptop"></i>Dashboard </a></li>
+                  <li class="px-2">/</li>
+                  <li class="breadcrumb-item Question-text " aria-current="page" >Question Bank</li>
+                </ol>
+            </div> 
+            <div class="box-body py-2">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="box-body-title text-white mt-2 mb-3 pb-3">
+                            <h5 >
+                                <a href="#" class="text-muted"><li class="fa fa-plus"></li> Add a Question Group</a>
+                            </h5>
+                        </div>   
+                        <div class="box-search d-flex justify-content-between">
+                            <div class="box-buttons">
+                                <a href="" class="btn btn-outline-secondary">Copy</a>
+                                <a href="" class="btn btn-outline-secondary">Exel</a>
+                                <a href="" class="btn btn-outline-secondary">CSV</a>
+                                <a href="" class="btn btn-outline-secondary">PDF</a>
                             </div>
+                            <div class="search">
+                                 <label for="search-icon" class="text-dark-50">Search : </label><input type="text" value="" id="search-icon" ></i> 
+                            </div>                               
+                           </div>
+                        <table id="quetion-table" class="table table-hover table-striped table-xl table-bordered table-hover  text-muted mt-2">
+                            <thead>
+                                <tr>
+                                    <th class="col-md-2"><div class="d-flex flex-row justify-content-between"><span>Sr.No</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
+                                    <th class="col-md-1"><div class="d-flex flex-row justify-content-between"><span>Difficulty Level</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
+                                    <th class="col-md-3"><div class="d-flex flex-row justify-content-between"><span>Question</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
+                                    <th class="col-md-1"><div class="d-flex flex-row justify-content-between align-items-center"><span>Question Group</span><div class="div flex-column d-flex m-0"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
+                                    <th class="col-md-1"><div class="d-flex flex-row justify-content-between"><span>Question Type</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
+                                    <th class="col-md-1"><div class="d-flex flex-row justify-content-between"><span>Action</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-active">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Medium</td>
+                                    <td> Digital computers are classified in four categories. W..</td>
+                                    <td>Computer Knowledge</td>
+                                    <td>Single Answer</td>
+                                    <td class="edit-delete">
+                                        <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
+                                        <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                        <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Medium</td>
+                                    <td> PC/XT stands for?</td>
+                                    <td>Computer Knowledge</td>
+                                    <td>Single Answer</td>
+                                    <td class="edit-delete">
+                                        <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
+                                        <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                        <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Medium</td>
+                                    <td> MIPS is _?</td>
+                                    <td>Computer Knowledge</td>
+                                    <td>Single Answer</td>
+                                    <td class="edit-delete">
+                                        <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
+                                        <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                        <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Hard</td>
+                                    <td> Typeface option will come under which menu ?...</td>
+                                    <td>Computer Knowledge</td>
+                                    <td>Single Answer</td>
+                                    <td class="edit-delete">
+                                        <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
+                                        <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                        <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Hard</td>
+                                    <td>Ctrl + H is short cut for ?</td>
+                                    <td>Computer Knowledge</td>
+                                    <td>Single Answer</td>
+                                    <td class="edit-delete">
+                                        <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
+                                        <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                        <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Medium</td>
+                                    <td> What will be the use of Ctrl + J ?</td>
+                                    <td>Computer Knowledge</td>
+                                    <td>Single Answer</td>
+                                    <td class="edit-delete">
+                                        <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
+                                        <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                        <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Easy</td>
+                                    <td> Which shortcut will we use to make text Italic ?...</td>
+                                    <td>Computer Knowledge</td>
+                                    <td>Single Answer</td>
+                                    <td class="edit-delete">
+                                        <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
+                                        <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                        <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Easy</td>
+                                    <td> You can jump to the next column by ?</td>
+                                    <td>Computer Knowledge</td>
+                                    <td>Single Answer</td>
+                                    <td class="edit-delete">
+                                        <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
+                                        <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                        <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Medium</td>
+                                    <td> What is the Short cut key for line break?...</td>
+                                    <td>Computer Knowledge</td>
+                                    <td>Single Answer</td>
+                                    <td class="edit-delete">
+                                        <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
+                                        <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                        <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Easy</td>
+                                    <td>What does Bangladesh's flag look like?</td>
+                                    <td>Computer Knowledge</td>
+                                    <td>Single Answer</td>
+                                    <td class="edit-delete">
+                                        <a href="#" class="btn btn-info view"><i class="fa-regular fa-square-check fa-2xs"></i></a>
+                                        <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                        <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="entries text-muted">
+                            <span>
+                                Showing 1 to 10 of 53 entries
+                            </span>
                         </div>
-                                            
-                    </div>   
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-end">
+                              <li class="page-item disabled">
+                                <a class="page-link link-text" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                              </li>
+                              <li class="page-item"><a class="page-link link-text bg-dark text-white" href="#">1</a></li>
+                              <li class="page-item"><a class="page-link link-text" href="#">2</a></li>
+                              <li class="page-item"><a class="page-link link-text" href="#">3</a></li>
+                              <li class="page-item"><a class="page-link link-text" href="#">4</a></li>
+                              <li class="page-item">
+                                <a class="page-link disabled link-text" href="#">Next</a>
+                              </li>
+                            </ul>
+                          </nav>
+                    </div>
                 </div>
+                                    
+            </div>  
+          <div class="row footer">
+            <div class="">
+              <script>
+                fetch("footer.html")
+                  .then(response => {
+                    return response.text()
+                  })
+                  .then(data => {
+                    document.querySelector(".footer").innerHTML = data;
+                  });
+              </script>
             </div>
-        </div>
-    </section>
-   
-
+          </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
