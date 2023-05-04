@@ -4,13 +4,14 @@ body {
     -webkit-font-smoothing: antialiased;
     min-height: 100%;
     background: #f1f2f7;
-    font-size: 14px;
 }
+
 /* custom background color */
 
 .bg-orange {
     background-color: #FF8A65;
 }
+
 .bg-teal-light {
     background-color: #4DB6AC;
 }
@@ -64,16 +65,21 @@ input[type='password'] {
 .nav-bar {
     border: 1px solid #00000000;
 }
+
 .navabar-list {
     height: 50px;
 }
+
 .color-green {
-    color:#00acac;;
+    color: #00acac;
+    ;
 }
+
 nav form i {
     font-size: 12px;
     color: black;
 }
+
 nav form span {
     font-size: 14px;
 }
@@ -107,16 +113,19 @@ ul li a span {
 .right-side-card {
     font-size: 50px;
 }
+
 .user-info img {
     border-radius: 50%;
     border: 5px solid rgba(256, 256, 256, 0.3);
     width: 60px;
     height: 60px;
 }
+
 .bg-maroon-light {
     background-color: #C24984 !important;
     color: #fff !important;
 }
+
 .user-info {
     border-radius: 4px;
 }
@@ -124,57 +133,76 @@ ul li a span {
 .user-info .user-profile {
     border-radius: 4px 4px 0px 0px;
 }
+
 .user-info div div span {
     font-size: 16px;
     font-weight: 300;
 }
+
 .user-info div div p {
     font-size: 12px;
 }
+
 .user-info .form-list {
     border-radius: 0px 0px 4px 4px;
 }
+
 .user-info .form-list table {
     font-size: 12px;
     width: 100%;
 }
+
 .user-info .form-list table tr {
     border-top: 1px solid #EEEEEE;
     height: 45px;
 }
+
 .user-info .form-list table tr td {
     padding: 8px;
 }
+
 .user-info .form-list table tr td i {
     color: #C24984;
 }
+
 .user-info .form-list table:hover tr:hover td {
-    background-color: #f0f3f5;;
+    background-color: #f0f3f5;
+    ;
 }
+
 table-hover>tbody>tr:hover>td {
-    background-color: #f0f3f5;;
+    background-color: #f0f3f5;
+    ;
 
 }
+
 .notice table {
     font-size: 12px;
     width: 100%;
 }
+
 .notice table tr {
     border-top: 1px solid #EEEEEE;
 }
+
 .notice table tr td {
     padding: 8px;
 }
+
 .notice table tr td i {
     color: #C24984;
 }
+
 .notice table:hover tr:hover {
-    background-color: #f0f3f5;;
+    background-color: #f0f3f5;
+    ;
 }
+
 .notice table tr td a {
     border-radius: 4px;
     padding: 2px;
 }
+
 .notice table tr td a i {
     margin: 5px;
     font-size: 12px;
@@ -184,8 +212,8 @@ table-hover>tbody>tr:hover>td {
 #calendar {
     max-width: 1100px;
     margin: 40px auto;
-  }
-  
+}
+
 /* footer */
 /* .no-margin {
     font-size: 13px;
@@ -205,4 +233,247 @@ footer {
     padding: 10px 0;
     background-color: #fff;
     text-align: center;
-  }
+}
+
+/* Library */
+.content {
+    padding: 20px 15px;
+    background: #f1f2f7;
+}
+
+.box .box-header {
+    background-color: #23292F;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom: 0px solid #f4f4f4;
+    color: #444;
+}
+
+.box-title {
+    padding: 15px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    float: left;
+    cursor: default;
+    color: #FFFFFF;
+    font-family: "OpenSans Regular";
+}
+
+.box-dash {
+    background: none !important;
+    float: right;
+    padding: 14px;
+    margin-bottom: 0px;
+    position: relative;
+    font-size: 12px;
+}
+
+.box-dash>.active {
+    color: #1AA;
+}
+
+.option-header {
+    margin: 10px 0 0px 0;
+    padding: 10px 16px 0px;
+    font-size: 22px;
+    border-radius: 0px;
+}
+
+.form-control {
+    border: 0px solid #09A3A3;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.select-option {
+    border-radius: 0px;
+    border: 1px solid #09A3A3;
+}
+
+.head-tab-custom {
+    margin-bottom: 0px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+}
+
+.head-tab-custom>.heading-tab {
+    background-color: #e5e5e5;
+    margin: 0;
+    border-bottom-color: #e5e5e5;
+    padding-left: 10px;
+}
+.heading-tab {
+    border-bottom: 1px solid #ddd;
+}
+
+ .form-1 {
+    padding-bottom: 18px;
+    padding-left: 31px;
+    padding-right: 24px;
+} 
+
+
+.head-tab-custom >.heading-tab > li {
+    background: none !important;
+    margin-bottom: 0px;
+    position: relative;
+    font-size: 14px;
+    padding-top: 10px;
+   
+}
+.head-tab-custom >.heading-tab > li > a
+{
+    border-bottom: 2px solid #09A3A3;
+    margin-bottom: 0px;
+}
+
+.content-tab {
+    background: #fff;
+    padding: 10px;
+}
+
+.dt-button {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-right: 0.333em;
+    padding: 0.5em 1em;
+    border: 1px solid #c3c3c3;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 0.88em;
+    color: #4c4c4c;
+    background-color: #FFF;
+}
+
+.search-button input {
+    border: 1px solid #e2e7eb;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #555;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    vertical-align: middle;
+    width: 10em;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table-bordered {
+    border: 1px solid #E2E7EB;
+
+}
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>td {
+    border-color: #E2E7EB;
+    font-size: 12px;
+}
+.dataTables_info
+{
+    padding-top: 8px;
+    color: #555;
+    font-size: 12px;
+}
+div.dataTables_paginate {
+    float: right;
+    margin: 0;
+}
+div.dataTables_paginate ul.pagination 
+{
+    margin: -12px 4px -101px;
+    white-space: nowrap;
+}
+.pagination > li > a
+{
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.428571429;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.page-header
+{
+    padding-left: 0px;
+    padding-top: 15px;
+
+}
+.content-tab-1
+{
+    background: #fff;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.button-tab
+{
+    margin-bottom: -8px;
+}
+.list-group
+{
+    padding-left: 0;
+    margin-bottom: 20px;
+    background-color: #D9E0E7;
+    border: 1px solid #ddd;
+}
+.list-group-item {
+    padding: 10px 15px;
+    background-color: #D9E0E7;
+    border: 1px solid #ddd;
+}
+.form-horizontal .form-group {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-horizontal .control-label {
+    text-align: left;
+    font-size: 12px;
+}
+.form-control {
+    border-radius: 3px;
+    box-shadow: none;
+    border: 1px solid #E2E7EB;
+    color: #555;
+    font-size: 12px;
+    line-height: 1.42857;
+    width: 100%;
+}
+.btn.btn-success {
+    color: #fff;
+    background-color: #00acac;
+    border-color: #00acac;
+}   
+/* Footer-Santoshi-ERP */
+.Main-footer
+{
+  
+  background: #fff;
+  padding: 13px;
+  color: #444;
+  border-top: 1px solid #DDDDDD;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-left: 241px;
+}
+/* .hidden-xs
+{
+  display: block!important;
+} */
