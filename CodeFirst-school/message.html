@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>message</title>
         <style>
 
     /* .side-bar {
@@ -65,60 +65,81 @@
                 </div>
 
                 <div class="col-10">
-                    <div class="card main">
+                    <div class="box-body">
                         <div class="row">
                             <div class="col-4">
                                 <h4 class="compose text-center mt-3">compose</h4>
                                 <div class="card">
                                     <h4 class="card1 text-white bg-black">Folders</h4>
                                     <div class="symbol ms-2">
-                                       <i class="bi bi-inbox-fill onmouseover=myFunction()"; id="ok"
-                                       >conversion </i><br>
-                                        <i class="bi bi-file-earmark-bar-graph">Drafts</i><br>
-                                        <i class="bi bi-trash">trash</i><br>
-                                        <i class="bi bi-envelope">sent</i>
+                                        <i class="bi bi-inbox-fill"></i>
+                                        <span class="ms-2">component</span>
+
+                                        <br>
+                                        <i class="bi bi-file-earmark-bar-graph"></i>
+                                        <span class="ms-2">Drafts</span><br>
+                                        <i class="bi bi-trash"></i>
+                                        <span class="ms-2">trash</span><br>
+
+                                        <i class="bi bi-envelope"></i>
+                                        <span class="ms-2 mt-1">sent</span><br>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-8">
                                 <div class="card">
                                     <div class="conversion-symbol">
-                                        <h4 class="Drafts text-white 
-                                        
+                                        <h4 class="Drafts text-white
+
                                             mt-3 ">Conversion</h4>
+                                            <div class="logo">
                                         <i class="logo1 bi bi-app"></i>
                                         <i class="logo2 bi bi-trash"></i>
                                         <i class="logo3 bi bi-arrow-clockwise"></i>
+                                            </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-3 mt-2 ">
-                                            <select name="" id="">
-                                                <option value="">10</option>
-                                                <option value="">25</option>
-                                                <option value="">50</option>
-                                                <option value="">100</option>
-                                            </select>
+                                        <div class="col-6 mt-3 ms-2">
+                                            <label for="">
+                                                <select name="" id="">
+                                                    <option value="">10</option>
+                                                    <option value="">25</option>
+                                                    <option value="">50</option>
+                                                    <option value="">100</option>
+                                                </select>
+                                                record per pages
+                                            </label>
                                         </div>
-                                        <div class="col-3">
-                                            <h6>record per pages</h6>
-                                        </div>
-                                        <div class="col-6 me-0">
-                                            Search:<input type="search" name=""
-                                                id="">
-                                        </div>
-                                        <div class="row ms-2">
-                                            <table>
-                                                
-                                                <thead>
-                                                    <th>#</th>
-                                                    <th><i class="fa fa-caret-down"></i>status</th>
-                                                    <th><i class="fa fa-caret-down"></i>Name</th>
-                                                    <th><i class="fa fa-caret-down"></i>subject</th>
-                                                    <th><i class="fa fa-caret-down"></i>Attach</th>
-                                                    <th><i class="fa fa-caret-down"></i>Time</th>
-                                                    <th><i class="fa fa-caret-down"></i>Reply</th>
 
-                                                </thead>
+                                        <div class="col-4 search me-0">
+                                            <label for="">
+                                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+                                            </label>
+                                        </div>
+
+                                        <div class="row ms-2">
+                                            <table class="table mt-1">
+
+                                                <table id="dtBasicExample" class="table table-bordered table-sm" cellspacing="0" width="100% ">
+                                                    <thead>
+                                                      <tr>
+                                                        <th class="th-sm">#
+                                                        </th>
+                                                        <th class="th-sm">status
+                                                        </th>
+                                                        <th class="th-sm">Name
+                                                        </th>
+                                                        <th class="th-sm">Subject
+                                                        </th>
+                                                        <th class="th-sm">Attach
+                                                        </th>
+                                                        <th class="th-sm">Time
+                                                        </th>
+                                                        <th class="th-sm">Reply
+                                                        </th>
+                                                      </tr>
+                                                    </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td><input
@@ -162,30 +183,30 @@
                                                         <td><span class="reply">0</span></td>
                                                     </tr>
                                                 </tbody>
-                                                </div>
-                                            </table>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-
-                                          <h6 class="bottom ms-2">Showing 1 to 3 of 3 entries</h6>
-
                                             </div>
-                                            <div class="col-6 me-0">
-                                         <button disabled="disabled">previous</button>
-                                         <button disabled="disabled1">1</button>
-                                         <button disabled="disabled">next</button>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
 
+                                            <h6 class="bottom ms-2">Showing 1 to
+                                                3 of 3 entries</h6>
 
-
+                                        </div>
+                                        <div class="col-6 button me-0">
+                                            <button disabled="disabled">previous</button>
+                                            <button disabled="disabled1">1</button>
+                                            <button disabled="disabled">next</button>
+                                        </div>
+                                       
 
                                     </div>
-
-                                </div>
                                 </div>
                             </div>
 
-                            <div class="col-6"></div>
+                            <div class="col-6">
+
+                            </div>
                         </div>
                         <script>
             fetch("dashboard.html")

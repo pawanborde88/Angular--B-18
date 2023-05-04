@@ -212,10 +212,7 @@ footer {
     background-color: #49b6d6;
     color: #E2E7EB;
 }
-/* .card{
-    background-color: #fff;
-    width: 100%;  
-} */
+
 .reply{
     background-color:  #49b6d6;
     color:white;
@@ -226,18 +223,21 @@ padding:5px;
 height:5px;
 width:5px;
 object-fit: fill;
+width:100%;
 }
 .logo2{
     background-color: #ff5b57;
     padding:5px;
 height:5px;
 width:5px;
+width:100%;
 }
 .logo3{
     background-color: #348fe2;
     padding:5px;
 height:5px;
 width:5px;
+width:100%;
 }
 .conversion-symbol{
     display: inline-block;
@@ -247,9 +247,44 @@ button disable1{
     background-color: black;
 }
 
-.card main{
-    height:500px;
-}
+
 .Drafts{
     background-color: black;
 }
+a{
+    color:black;
+}
+table{
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+}
+table th,td {
+    display: table-cell;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    padding:8px;
+    font-size: 10px;
+    table-layout: initial;
+    right: 16px;
+    font-size: 1rem;
+    margin-top: 5px;
+    justify-content: center;
+}
+.row option{
+    margin-top: 5px;
+}
+ button{
+    float:right;
+}
+
+.logo{
+    display: inline-block;
+}
+.box-body{
+    padding: 15px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
