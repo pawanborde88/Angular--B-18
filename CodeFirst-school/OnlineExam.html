@@ -49,13 +49,13 @@
         .edit {
             padding: 1px  5px;
             margin: 0px 2px;
-            border-radius: 2px;
+            border-radius: 3px;
             color: white;
         }
         .delete{
-            padding: 2px  10px;
+            padding: 1px  5px;
             margin: 0px 2px;
-            border-radius: 2px;
+            border-radius: 3px;
             color: white;
         }
         .search label,span{
@@ -77,6 +77,10 @@
             border-style: solid;
             border-color: #00000054;
         }
+        .onoffswitch-small-checkbox{
+            border:#00000054 solid 2px ;
+            border-radius: 10px;
+        }
     </style> -->
 </head>
 
@@ -87,7 +91,7 @@
                 <div class="col-md-10 ">
                    <div class="box-header d-flex justify-content-between bg-dark text-white align-items-center" >
                     <span class="box-title ps-3">
-                        <i class="fa fa-slideshare"></i>
+                        <i class="fa-brands fa-slideshare fa-xl"></i>
                         Online Exam
                     </span>                
                         <ol class="breadcrumb pt-2 pe-3 ">
@@ -115,32 +119,32 @@
                                      <label for="search-icon" class="text-dark-50">Search : </label><input type="text" value="" id="search-icon" ></i> 
                                 </div>                               
                                </div>
-                                <table id="quetion-table" class="table table-sm table-bordered table-hover table-active table-striped dataTable no-footer text-muted mt-2">
-                                    <thead>
+                                <table id="quetion-table" class="table table-hover table-striped table-sm table-bordered table-hover dataTable no-footer text-muted mt-2">
+                                    <thead class="thead-white">
                                         <tr>
-                                            <th class="col-sm-1">Sr.No</th>
-                                            <th class="col-sm-3">Exam Title</th>
-                                            <th class="col-sm-2">Exam Status</th>
-                                            <th class="col-sm-2">Date</th>
-                                            <th class="col-sm-2">Published</th>
-                                            <th class="col-sm-2">Action</th>
+                                            <th class="col-sm-1"><div class="d-flex flex-row justify-content-between"><span>Sr.No</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
+                                            <th class="col-sm-3"><div class="d-flex flex-row justify-content-between"><span>Exam Title</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
+                                            <th class="col-sm-2"><div class="d-flex flex-row justify-content-between"><span>Exam Status</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
+                                            <th class="col-sm-2"><div class="d-flex flex-row justify-content-between"><span>Date</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
+                                            <th class="col-sm-2"><div class="d-flex flex-row justify-content-between"><span>Published</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
+                                            <th class="col-sm-2"><div class="d-flex flex-row justify-content-between"><span>Action</span><div class="div flex-column d-flex m-2"> <i class="fa-solid fa-sort-up fa-xl"></i><i class="fa-solid fa-sort-down fa-xl"></i></div></div></th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
+                                    <tbody class="table-active">
+                                        <tr >
                                             <td>1</td>
                                             <td>ICT Exam</td>
                                             <td>Multiple Time</td>
                                             <td>17-Jul-2022 - 29-Jul-2022</td>
                                             <td>
-                                                <div class="onoffswitchbutton">
+                                                <d class="onoffswitchbutton">
                                                     <label for="onoffswitch" class="onoffswitch-small-label px-2 text-white ">YES</label>
                                                     <input type="checkbox" name="onoffswitch" class="onoffswitch-small-checkbox" id="onoffswitch">
                                                 </div>
                                             </td>
                                             <td class="edit-delete">
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa fa-trash-o"></li></a>
+                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                                <a href="#" class="btn btn-danger delete"><i class="fa-solid fa-trash-can fa-2xs"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -155,8 +159,8 @@
                                                 </div>
                                             </td>
                                             <td class="edit-delete">
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa fa-trash-o"></li></a>
+                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                                <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -171,8 +175,8 @@
                                                 </div>
                                             </td>
                                             <td class="edit-delete">
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa fa-trash-o"></li></a>
+                                                <a href="#" class="btn btn-warning edit"><i class="fa-sharp fa-solid fa-pen-to-square fa-2xs"></i></a>
+                                                <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -187,8 +191,8 @@
                                                 </div>
                                             </td>
                                             <td class="edit-delete">
-                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit"></li></a>
-                                                <a href="#" class="btn btn-danger delete"><li class="fa fa-trash-o"></li></a>
+                                                <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                                <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
                                             </td>
                                         </tr>
                                         

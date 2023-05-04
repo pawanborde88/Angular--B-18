@@ -1,0 +1,188 @@
+
+  <div class="container-fluid">
+    <div class="row">
+      <header>
+        <script>
+          fetch("navbar.html")
+            .then(response => {
+              return response.text()
+            })
+            .then(data => {
+              document.querySelector("header").innerHTML = data;
+              
+              const sidebar = document.querySelector('aside');
+              const dashboard = document.querySelector('.dash-bar');
+              // const footerbar = document.querySelector('.footer');
+              const sidebarToggle = document.querySelector('#sidebar-toggle');
+
+            sidebarToggle.addEventListener('click', function() {
+              sidebar.classList.toggle('hidden');
+              dashboard.classList.toggle('expanded');
+              // footerbar.classList.toggle('shrink');
+              console.log('toggle clicked')
+            });
+            });
+        </script>
+      </header>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <aside>
+          <script>
+            fetch("sidebar.html")
+              .then(response => {
+                return response.text()
+              })
+              .then(data => {
+                document.querySelector("aside").innerHTML = data;
+              });
+          </script>
+        </aside>
+      </div>
+      <div class="col-10 dash-bar">
+        <div class="col-md-10 ">
+          <div class="box-header d-flex justify-content-between bg-dark text-white align-items-center" >
+           <span class="box-title ps-3">
+               <i class="fa-brands fa-slideshare fa-xl"></i>
+               Online Exam
+           </span>                
+               <ol class="breadcrumb pt-2 pe-3 ">
+                 <li class="breadcrumb-item Dashboard-text"><a href="#"><i class="fa fa-laptop"></i>Dashboard </a></li>
+                 <li class="mx-2">/</li>
+                 <li class="breadcrumb-item Question-text" aria-current="page" >Online Exam</li>
+               </ol>
+           </div> 
+           <div class="box-body py-2">
+               <div class="row">
+                   <div class="col-12">
+                       <div class="box-body-title text-white mt-2 mb-3 pb-3 ">
+                           <h5 >
+                               <a href="#" class="text-muted"><li class="fa fa-plus"></li> Add a Online Exam</a>
+                           </h5>
+                       </div>   
+                      <div class="box-search d-flex justify-content-between">
+                       <div class="box-buttons">
+                           <a href="" class="btn btn-outline-secondary">Copy</a>
+                               <a href="" class="btn btn-outline-secondary">Exel</a>
+                               <a href="" class="btn btn-outline-secondary">CSV</a>
+                               <a href="" class="btn btn-outline-secondary">PDF</a>
+                       </div>
+                       <div class="search">
+                            <label for="search-icon" class="text-dark-50">Search : </label><input type="text" value="" id="search-icon" ></i> 
+                       </div>                               
+                      </div>
+                       <table id="quetion-table" class="table table-sm table-bordered table-hover table-striped dataTable no-footer text-muted mt-2">
+                           <thead class="thead-white">
+                               <tr>
+                                   <th class="col-sm-1">Sr.No</th>
+                                   <th class="col-sm-3">Exam Title</th>
+                                   <th class="col-sm-2">Exam Status</th>
+                                   <th class="col-sm-2">Date</th>
+                                   <th class="col-sm-2">Published</th>
+                                   <th class="col-sm-2">Action</th>
+                               </tr>
+                           </thead>
+                           <tbody class="table-active">
+                               <tr >
+                                   <td>1</td>
+                                   <td>ICT Exam</td>
+                                   <td>Multiple Time</td>
+                                   <td>17-Jul-2022 - 29-Jul-2022</td>
+                                   <td>
+                                       <d class="onoffswitchbutton">
+                                           <label for="onoffswitch" class="onoffswitch-small-label px-2 text-white ">YES</label>
+                                           <input type="checkbox" name="onoffswitch" class="onoffswitch-small-checkbox" id="onoffswitch">
+                                       </div>
+                                   </td>
+                                   <td class="edit-delete">
+                                       <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                       <a href="#" class="btn btn-danger delete"><i class="fa-solid fa-trash-can fa-2xs"></i></a>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>2</td>
+                                   <td>Math Exam</td>
+                                   <td>Multiple Time</td>
+                                   <td>17-Jul-2022 - 18-Jul-2022</td>
+                                   <td>
+                                       <div class="onoffswitchbutton">
+                                           <label for="onoffswitch" class="onoffswitch-small-label px-2 text-white ">YES</label>
+                                           <input type="checkbox" name="onoffswitch" class="onoffswitch-small-checkbox" id="onoffswitch">
+                                       </div>
+                                   </td>
+                                   <td class="edit-delete">
+                                       <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                       <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>3</td>
+                                   <td>English Exam</td>
+                                   <td>Multiple Time</td>
+                                   <td>28-Jul-2022 - 01-Dec-2022</td>
+                                   <td>
+                                       <div class="onoffswitchbutton">
+                                           <label for="onoffswitch" class="onoffswitch-small-label px-2 text-white ">YES</label>
+                                           <input type="checkbox" name="onoffswitch" class="onoffswitch-small-checkbox" id="onoffswitch">
+                                       </div>
+                                   </td>
+                                   <td class="edit-delete">
+                                       <a href="#" class="btn btn-warning edit"><i class="fa-sharp fa-solid fa-pen-to-square fa-2xs"></i></a>
+                                       <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>4</td>
+                                   <td>Computer Overhauls</td>
+                                   <td>One Time</td>
+                                   <td>   </td>
+                                   <td>
+                                       <div class="onoffswitchbutton">
+                                           <label for="onoffswitch" class="onoffswitch-small-label px-2 text-white ">YES</label>
+                                           <input type="checkbox" name="onoffswitch" class="onoffswitch-small-checkbox" id="onoffswitch">
+                                       </div>
+                                   </td>
+                                   <td class="edit-delete">
+                                       <a href="#" class="btn btn-warning edit"><li class="fa fa-edit fa-2xs"></li></a>
+                                       <a href="#" class="btn btn-danger delete"><li class="fa-solid fa-trash-can fa-2xs"></li></a>
+                                   </td>
+                               </tr>
+                               
+                           </tbody>
+                       </table>
+                       <div class="entries text-muted">
+                           <span>
+                               Showing 1 to 4 of 4 entries
+                           </span>
+                       </div>
+                       <nav aria-label="Page navigation ">
+                           <ul class="pagination justify-content-end">
+                             <li class="page-item disabled">
+                               <a class="page-link link-text" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                             </li>
+                             <li class="page-item"><a class="page-link link-text bg-dark text-white" href="#">1</a></li>
+                             <li class="page-item">
+                               <a class="page-link disabled link-text" href="#">Next</a>
+                             </li>
+                           </ul>
+                         </nav>
+                   </div>
+               </div>
+                                   
+           </div>  
+          <div class="row footer">
+            <div class="">
+              <script>
+                fetch("footer.html")
+                  .then(response => {
+                    return response.text()
+                  })
+                  .then(data => {
+                    document.querySelector(".footer").innerHTML = data;
+                  });
+              </script>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
